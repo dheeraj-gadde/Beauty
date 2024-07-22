@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+    <h1>Product List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.name}">Product Name</td>
+                <td th:text="${product.description}">Product Description</td>
+                <td th:text="${product.price}">Product Price</td>
+                <td>
+                    <form action="#" th:action="@{/user/cart}" method="post">
+                        <input type="hidden" name="productId" th:value="${product.id}">
+                        <button type="submit">Add to Cart</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>

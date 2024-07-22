@@ -1,0 +1,19 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #f8f8f8;
+    padding: 1em;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+nav a {
+    margin-right: 1em;
+    text-decoration: none;
+    color: #333;
+}

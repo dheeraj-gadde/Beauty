@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+    <h1>Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${cart.items}">
+                <td th:text="${item.product.name}">Product Name</td>
+                <td th:text="${item.quantity}">Product Quantity</td>
+                <td th:text="${item.product.price * item.quantity}">Product Total Price</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/user/checkout">Checkout</a>
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>

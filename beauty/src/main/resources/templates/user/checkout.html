@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+    <h1>Checkout</h1>
+    <form action="#" th:action="@{/user/checkout}" method="post">
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div>
+            <label for="payment">Payment Method:</label>
+            <input type="text" id="payment" name="payment">
+        </div>
+        <button type="submit">Place Order</button>
+    </form>
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>
